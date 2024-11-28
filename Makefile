@@ -7,8 +7,8 @@ OBJDIR = obj
 LIBFT_DIR = libft
 
 # Arquivos
-SRC = $(wildcard $(SRCDIR)/*.c)              # Todos os .c em src
-OBJ = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRC)) # Transforma src/*.c em obj/*.o
+SRC = $(shell find $(SRCDIR) -type f -name "*.c")          # Todos os .c em src
+OBJ = $(OBJDIR)/$(notdir $(SRC:.c=.o))# Transforma src/*.c em obj/*.o
 LIBFT = $(LIBFT_DIR)/libft.a                 # Caminho para a libft
 
 # Compilador e flags

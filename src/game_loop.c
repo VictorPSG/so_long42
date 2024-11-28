@@ -6,15 +6,15 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 21:31:16 by victda-s          #+#    #+#             */
-/*   Updated: 2024/11/27 23:02:52 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/11/28 00:45:36 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/main.h"
 
-int game_loop(t_core *core)
+int	game_loop(t_core *core)
 {
-	write(1,"a",1);
+	write(1, "a", 1);
 	core->win.bpp = 8;
 	return (0);
 }

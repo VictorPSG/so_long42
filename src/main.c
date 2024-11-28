@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/11/27 22:57:15 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/11/28 01:05:31 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(void)
 		free(core.win.mlx);
 		return (1);
 	}
+	load_img(core.win, core.grass);
 	mlx_loop_hook(core.win.mlx, game_loop, &core);
 	free_window(&core);
 }
