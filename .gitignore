@@ -1,0 +1,6 @@
+# Ignorar configurações do VSCode
+.vscode/
+
+# Ignora arquivos de compilação
+so_long
+obj/
