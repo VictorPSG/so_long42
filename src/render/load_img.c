@@ -6,13 +6,13 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 00:35:49 by victda-s          #+#    #+#             */
-/*   Updated: 2024/11/29 03:35:21 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/11/29 04:02:48 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/main.h"
 
-void	load_img(char *path[], void *frame[], t_core *core)
+int	load_img(char *path[], void *frame[], t_core *core)
 {
 	int	i;
 
@@ -24,7 +24,9 @@ void	load_img(char *path[], void *frame[], t_core *core)
 		if (!frame[i])
 		{
 			write(1, "Erro ao carregar a imagem!", 26);
+			return (0);
 		}
 		i++;
 	}
+	return (1);
 }

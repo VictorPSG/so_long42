@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/11/29 03:38:02 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/11/29 04:12:41 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	main(void)
 		free(core.win.mlx);
 		return (1);
 	}
-	load_grass(&core);
+	if (!load_grass(&core))
+		return (0);
 	if (!core.grass.frames[0])
 	{
 		write(1, "erro", 4);

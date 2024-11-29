@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/11/29 03:30:57 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/11/29 04:11:14 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ typedef struct s_core
 }			t_core;
 int		game_loop(t_core *core);
 void	free_window(t_core *core);
-void	load_img(char *path[], void *frame[], t_core *core);
-void	load_grass(t_core *core);
+int		load_img(char *path[], void *frame[], t_core *core);
+int		load_grass(t_core *core);
 #endif
