@@ -7,20 +7,18 @@ OBJDIR = obj
 LIBFT_DIR = libft
 
 # Arquivos
-SRC = $(shell find $(SRCDIR) -type f -name "*.c")          # Todos os .c em src
-OBJ = $(OBJDIR)/$(notdir $(SRC:.c=.o))# Transforma src/*.c em obj/*.o
-LIBFT = $(LIBFT_DIR)/libft.a                 # Caminho para a libft
+SRC = $(shell find $(SRCDIR) -type f -name "*.c")
+OBJ = $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+LIBFT = $(LIBFT_DIR)/libft.a
 
 # Compilador e flags
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -Ilibft
+CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR)
 
 # Flags de linkagem
-#LDFLAGS = -L$(LIBFT_DIR) -lft -lX11 -lXext -lmlx
-LDFLAGS = -L -lft -lX11 -lXext -lmlx
+LDFLAGS = -lX11 -lXext -lmlx
 
 # Regra principal
-#all: $(LIBFT) $(NAME)
 all: $(NAME)
 
 # Compilar o jogo
@@ -28,7 +26,6 @@ $(NAME): $(OBJ)
 	@echo "Linkando $(NAME)..."
 	$(CC) $(OBJ) $(LDFLAGS) -o $(NAME)
 
-# Compilar a libft
 $(LIBFT):
 	@echo "Compilando libft..."
 	make -C $(LIBFT_DIR)
@@ -41,24 +38,22 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 # Criação do diretório de objetos
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
+	@mkdir -p $(OBJDIR)/render
 
 # Limpeza de objetos
 clean:
 	@echo "Limpando objetos..."
 	rm -rf $(OBJDIR)
-#	make clean -C $(LIBFT_DIR)
 
 # Limpeza completa
 fclean: clean
 	@echo "Removendo $(NAME)..."
 	rm -f $(NAME)
-#	make fclean -C $(LIBFT_DIR)
 
 # Reconstruir tudo
 re: fclean all
 
 # Testar com Valgrind
-#valgrind: $(NAME)
 valgrind:
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
 

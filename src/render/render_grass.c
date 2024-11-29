@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_img.c                                         :+:      :+:    :+:   */
+/*   render_grass.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 00:35:49 by victda-s          #+#    #+#             */
-/*   Updated: 2024/11/29 03:35:21 by victda-s         ###   ########.fr       */
+/*   Created: 2024/11/29 02:44:37 by victda-s          #+#    #+#             */
+/*   Updated: 2024/11/29 03:33:50 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/main.h"
 
-void	load_img(char *path[], void *frame[], t_core *core)
+void	load_grass(t_core *core)
 {
-	int	i;
+	char	*path[7];
 
-	i = 0;
-	while (path[i] != NULL)
-	{
-		frame[i] = mlx_xpm_file_to_image(core->win.mlx, path[i],
-				&core->grass.width, &core->grass.height);
-		if (!frame[i])
-		{
-			write(1, "Erro ao carregar a imagem!", 26);
-		}
-		i++;
-	}
+	path[0] = "assets/texture/grass_left_down.xpm";
+	path[1] = "assets/texture/grass_left_up.xpm";
+	path[2] = "assets/texture/grass_middle_up.xpm";
+	path[3] = "assets/texture/grass_middle.xpm";
+	path[4] = "assets/texture/grass_right_down.xpm";
+	path[5] = "assets/texture/grass_right_up.xpm";
+	path[6] = NULL;
+	load_img(path, core->grass.frames, core);
 }
