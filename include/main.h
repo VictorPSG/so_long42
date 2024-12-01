@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/11/30 22:20:34 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/11/30 22:28:30 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,17 @@ typedef struct s_grass
 	int		height;
 }			t_grass;
 
+typedef struct s_duck
+{
+	void	*frames[10];
+	int		pos_x;
+	int		pos_y;
+}			t_duck;
 typedef struct s_core
 {
 	t_window	win;
 	t_grass		grass;
+	t_duck		duck;
 }			t_core;
 int		game_loop(t_core *core);
 void	free_window(t_core *core);
