@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/11/29 04:11:14 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/11/30 22:20:34 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <X11/keysym.h>
 # include <stdlib.h>
 # include <unistd.h>
-# define WIN_WIDTH 1800
-# define WIN_HEIGHT 900
+# define WIN_WIDTH 1792
+# define WIN_HEIGHT 896
 
 typedef struct s_window
 {
@@ -30,7 +30,7 @@ typedef struct s_window
 
 typedef struct s_grass
 {
-	void	*frames[6];
+	void	*frames[11];
 	int		width;
 	int		height;
 }			t_grass;
@@ -44,4 +44,6 @@ int		game_loop(t_core *core);
 void	free_window(t_core *core);
 int		load_img(char *path[], void *frame[], t_core *core);
 int		load_grass(t_core *core);
+void	grass_render(t_core *core, int i, int x, int y);
+void	corner_render(t_core *core);
 #endif

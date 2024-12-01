@@ -39,6 +39,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
 	@mkdir -p $(OBJDIR)/render
+	@mkdir -p $(OBJDIR)/tests
 
 # Limpeza de objetos
 clean:

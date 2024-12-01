@@ -4,3 +4,7 @@
 # Ignora arquivos de compilação
 so_long
 obj/
+
+# Arquivos de teste
+tests/
+test.h
