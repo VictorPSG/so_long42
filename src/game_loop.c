@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 21:31:16 by victda-s          #+#    #+#             */
-/*   Updated: 2024/11/30 22:32:37 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/03 00:01:40 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int	game_loop(t_core *core)
 
 	i = 0;
 	corner_render(core);
-	test_render_background(core);
+	duck_render(core, 0, core->duck.pos_x, core->duck.pos_y);
 	return (0);
 }

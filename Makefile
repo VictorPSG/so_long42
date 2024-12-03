@@ -40,6 +40,8 @@ $(OBJDIR):
 	@mkdir -p $(OBJDIR)
 	@mkdir -p $(OBJDIR)/render
 	@mkdir -p $(OBJDIR)/tests
+	@mkdir -p $(OBJDIR)/map
+	@mkdir -p $(OBJDIR)/handle_input
 
 # Limpeza de objetos
 clean:
