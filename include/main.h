@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/03 00:16:02 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/03 20:42:52 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,15 @@ typedef struct s_duck
 	void	*frames[10];
 	int		pos_x;
 	int		pos_y;
-}			t_duck;
-typedef struct s_map
-{
-	char	**matrix;
 	int		line;
 	int		col;
-}			t_map;
-
+}			t_duck;
 typedef struct s_core
 {
 	t_window	win;
 	t_grass		grass;
 	t_duck		duck;
-	t_map		map;
+	char		**map;
 }			t_core;
 int		game_loop(t_core *core);
 void	free_window(t_core *core);
@@ -61,7 +56,7 @@ int		load_img(char *path[], void *frame[], t_core *core);
 int		load_grass(t_core *core);
 void	grass_render(t_core *core, int i, int x, int y);
 void	corner_render(t_core *core);
-char	**map_matrix();
+char	**map_matrix(void);
 int		handle_keyboard(int keysym, t_core *core);
 void	duck_render(t_core *core, int i, int x, int y);
 int		load_duck(t_core *core);
