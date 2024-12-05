@@ -13,7 +13,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 # Compilador e flags
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR)
+CFLAGS = -g3 -Wall -Wextra -Werror -I$(LIBFT_DIR)
 
 # Flags de linkagem
 LDFLAGS = -lX11 -lXext -lmlx

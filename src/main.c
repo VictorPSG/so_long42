@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/03 20:48:07 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/05 01:23:54 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(void)
 {
 	t_core	core;
 
+	// core.map = map_matrix();
 	core.win.mlx = mlx_init();
 	if (!core.win.mlx)
 		return (1);
@@ -26,9 +27,7 @@ int	main(void)
 		mlx_destroy_display(core.win.mlx);
 		return (1);
 	}
-	if (!load_grass(&core))
-		return (0);
-	if (!load_duck(&core))
+	if (!load_grass(&core) || !load_duck(&core) || !load_coin(&core))
 		return (0);
 	mlx_loop_hook(core.win.mlx, game_loop, &core);
 	core.map = map_matrix();

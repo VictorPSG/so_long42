@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_img.c                                         :+:      :+:    :+:   */
+/*   coin_render.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 00:35:49 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/05 00:46:23 by victda-s         ###   ########.fr       */
+/*   Created: 2024/12/05 00:04:05 by victda-s          #+#    #+#             */
+/*   Updated: 2024/12/05 01:24:04 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/main.h"
 
-int	load_img(char *path[], void *frame[], t_core *core)
+void	coin_render(t_core *core, int i, int x, int y)
 {
-	int	i;
+	mlx_put_image_to_window(core->win.mlx, core->win.ptr,
+		core->coin.frame[i], x, y);
+}
+int	load_coin(t_core *core)
+{
+	char	*path[2];
 
-	i = 0;
-	while (path[i] != NULL)
-	{
-		frame[i] = mlx_xpm_file_to_image(core->win.mlx, path[i],
-				&core->grass.width, &core->grass.height);
-		if (!frame[i])
-		{
-			write(1, "Erro ao carregar a imagem!\n", 27);
-			i = '0' + i;
-			write(1, &i, 1);
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	path[0] = "assets/apple.xpm";
+	path[1] = NULL;
+	return (load_img(path, core->coin.frame, core));
 }

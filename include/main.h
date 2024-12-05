@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/03 20:42:52 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/05 01:03:21 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <X11/keysym.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 # define WIN_WIDTH 1792
 # define WIN_HEIGHT 896
 
@@ -43,11 +44,20 @@ typedef struct s_duck
 	int		line;
 	int		col;
 }			t_duck;
+
+typedef struct s_coin
+{
+	void	*frame[2];
+	int		total;
+	int 	colected;
+}			t_coin;
+
 typedef struct s_core
 {
 	t_window	win;
 	t_grass		grass;
 	t_duck		duck;
+	t_coin		coin;
 	char		**map;
 }			t_core;
 int		game_loop(t_core *core);
@@ -60,4 +70,6 @@ char	**map_matrix(void);
 int		handle_keyboard(int keysym, t_core *core);
 void	duck_render(t_core *core, int i, int x, int y);
 int		load_duck(t_core *core);
+void	coin_render(t_core *core, int i, int x, int y);
+int		load_coin(t_core *core);
 #endif
