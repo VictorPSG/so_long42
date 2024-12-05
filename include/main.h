@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/05 14:45:38 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/05 17:27:01 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -49,7 +49,7 @@ typedef struct s_coin
 {
 	void	*frame[2];
 	int		total;
-	int 	colected;
+	int 	collected;
 }			t_coin;
 
 typedef struct s_core
