@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/05 01:03:21 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:45:38 by victda-s         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef MAIN_H
 # define MAIN_H
@@ -64,6 +64,7 @@ int		game_loop(t_core *core);
 void	free_window(t_core *core);
 int		load_img(char *path[], void *frame[], t_core *core);
 int		load_grass(t_core *core);
+void	render_map(char **map, t_core *core);
 void	grass_render(t_core *core, int i, int x, int y);
 void	corner_render(t_core *core);
 char	**map_matrix(void);

@@ -1,16 +1,17 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   render_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 20:33:30 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/05 01:23:30 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:43:46 by victda-s         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "../../include/main.h"
+#include <stdio.h>
 
 void	render_map(char **map, t_core *core)
 {
@@ -19,13 +20,8 @@ void	render_map(char **map, t_core *core)
 
 	col = 2;
 	line = 2;
-	while (line <= 25)
+	while (line < 26)
 	{
-		if (col == 55)
-		{
-			col = 2;
-			line++;
-		}
 		if (map[line - 2][col - 2] == 48)
 			grass_render(core, 5, col * 32, line * 32);
 		else if (map[line - 2][col - 2] == 49)
@@ -36,10 +32,12 @@ void	render_map(char **map, t_core *core)
 			core->duck.pos_y = line * 32;
 		}
 		else if (map[line - 2][col - 2] == 'C')
-		{
-			write(1, "a", 1);
 			coin_render(core, 0, col * 32, line * 32);
-		}
 		col++;
+		if (col == 55)
+		{
+			col = 2;
+			line++;
+		}
 	}
 }
