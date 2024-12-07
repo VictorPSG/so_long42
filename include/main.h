@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/05 17:27:01 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/07 00:43:35 by victda-s         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef MAIN_H
 # define MAIN_H
@@ -19,6 +19,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include "../libft/libft.h"
+# include "../libft/get_next_line.h"
 # define WIN_WIDTH 1792
 # define WIN_HEIGHT 896
 
@@ -67,10 +69,13 @@ int		load_grass(t_core *core);
 void	render_map(char **map, t_core *core);
 void	grass_render(t_core *core, int i, int x, int y);
 void	corner_render(t_core *core);
-char	**map_matrix(void);
+char	**map_matrix(char **matrix);
 int		handle_keyboard(int keysym, t_core *core);
 void	duck_render(t_core *core, int i, int x, int y);
 int		load_duck(t_core *core);
 void	coin_render(t_core *core, int i, int x, int y);
 int		load_coin(t_core *core);
+char	*get_next_line(int fd);
+int 	open_file(char *filename);
+char	**map(void);
 #endif
