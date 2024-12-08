@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/08 00:22:13 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/08 16:26:49 by victda-s         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef MAIN_H
 # define MAIN_H
@@ -31,7 +31,7 @@ typedef struct s_window
 	int		bpp;
 	int		width;
 	int		height;
-	}			t_window;
+}			t_window;
 
 typedef struct s_grass
 {
@@ -53,7 +53,7 @@ typedef struct s_coin
 {
 	void	*frame[2];
 	int		total;
-	int 	collected;
+	int		collected;
 }			t_coin;
 
 typedef struct s_core
@@ -78,5 +78,5 @@ int		load_duck(t_core *core);
 void	coin_render(t_core *core, int i, int x, int y);
 int		load_coin(t_core *core);
 char	*get_next_line(int fd);
-int 	open_file(char *filename);
+int		open_file(char *filename);
 #endif

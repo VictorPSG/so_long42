@@ -6,11 +6,12 @@
 /*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 21:31:16 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/05 17:37:09 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/08 16:51:13 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../include/main.h"
+#include <stdio.h>
 
 int	game_loop(t_core *core)
 {
