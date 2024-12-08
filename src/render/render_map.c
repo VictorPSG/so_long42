@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 20:33:30 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/07 01:06:19 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/08 00:28:34 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	render_map(char **map, t_core *core)
 
 	col = 2;
 	line = 2;
-	while (map[line - 2][col - 2])
+	while (map[line - 2])
 	{
 		if (map[line - 2][col - 2] == 48)
 			grass_render(core, 5, col * 32, line * 32);

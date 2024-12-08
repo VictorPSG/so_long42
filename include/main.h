@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/07 00:43:35 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/08 00:22:13 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ typedef struct s_window
 	void	*mlx;
 	void	*ptr;
 	int		bpp;
-}			t_window;
+	int		width;
+	int		height;
+	}			t_window;
 
 typedef struct s_grass
 {
@@ -69,7 +71,7 @@ int		load_grass(t_core *core);
 void	render_map(char **map, t_core *core);
 void	grass_render(t_core *core, int i, int x, int y);
 void	corner_render(t_core *core);
-char	**map_matrix(char **matrix);
+char	**map_matrix(char *file, t_core *core);
 int		handle_keyboard(int keysym, t_core *core);
 void	duck_render(t_core *core, int i, int x, int y);
 int		load_duck(t_core *core);
@@ -77,5 +79,4 @@ void	coin_render(t_core *core, int i, int x, int y);
 int		load_coin(t_core *core);
 char	*get_next_line(int fd);
 int 	open_file(char *filename);
-char	**map(void);
 #endif
