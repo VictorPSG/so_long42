@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/08 00:40:17 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/08 01:21:30 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 	core.map = map_matrix("src/map/map.ber", &core);
 	if (!core.win.mlx)
 		return (1);
-	core.win.ptr = mlx_new_window(core.win.mlx, WIN_WIDTH, WIN_HEIGHT, "GAME");
+	core.win.ptr = mlx_new_window(core.win.mlx, core.win.width, core.win.height, "GAME");
 	if (!core.win.ptr)
 	{
 		mlx_destroy_display(core.win.mlx);
