@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:49:17 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/08 00:32:22 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/08 00:36:03 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ char	**map_matrix(char *file, t_core *core)
 	}
 	matrix[i] = NULL;
 	core->win.height = i * 32;
+	printf("%d", (i * 32) + 128);
 	return (matrix);
 }
