@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 21:31:23 by victda-s          #+#    #+#             */
-/*   Updated: 2024/11/28 00:45:03 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/09 20:25:21 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,14 @@ void	free_window(t_core *core)
 	{
 		mlx_destroy_display(core->win.mlx);
 		free(core->win.mlx);
+	}
+}
+
+void	free_image(void *frame[], t_core *core)
+{
+	while (frame)
+	{
+		mlx_destroy_image(core->win.mlx, frame);
+		frame = NULL;
 	}
 }

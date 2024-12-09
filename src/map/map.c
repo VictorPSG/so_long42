@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:49:17 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/08 21:34:12 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/09 20:01:20 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ char	**map_matrix(char *file, t_core *core)
 	len = 0;
 	fd = open_file(file);
 	matrix = (char **)malloc(65 * sizeof(char *));
+	if (!matrix)
+		return (0);
 	while (i < 65)
 	{
 		matrix[i] = get_next_line(fd);

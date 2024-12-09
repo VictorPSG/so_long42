@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/08 21:39:59 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/09 20:24:51 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	main(void)
 {
 	t_core	core;
 
-	core.win.mlx = mlx_init();
 	core.coin.total = 0;
 	core.coin.collected = 0;
 	core.map = map_matrix("src/map/map.ber", &core);
+	core.win.mlx = mlx_init();
 	if (!core.win.mlx)
 		return (1);
 	core.win.ptr = mlx_new_window(core.win.mlx,
