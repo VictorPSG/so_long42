@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   handle_keyboard.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 23:06:17 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/08 16:57:24 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/08 21:38:53 by victda-s         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "../../include/main.h"
 #include <stdio.h>
@@ -35,7 +35,10 @@ static void	move_if_valid(t_core *core, int dx, int dy)
 	map[duck_y + dy][duck_x + dx] != 'E')
 	{
 		if (map[duck_y + dy][duck_x + dx] == 'C')
+		{
+			core->map[duck_y + dy][duck_x + dx] = '0';
 			core->coin.collected++;
+		}
 		grass_render(core, 5, core->duck.pos_x, core->duck.pos_y);
 		core->duck.pos_x += dx * 32;
 		core->duck.pos_y += dy * 32;

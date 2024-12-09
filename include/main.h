@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/08 16:26:49 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/08 21:26:20 by victda-s         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef MAIN_H
 # define MAIN_H
@@ -79,4 +79,5 @@ void	coin_render(t_core *core, int i, int x, int y);
 int		load_coin(t_core *core);
 char	*get_next_line(int fd);
 int		open_file(char *filename);
+void	free_matrix(char **matrix);
 #endif

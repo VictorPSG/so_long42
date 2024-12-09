@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 20:33:30 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/08 01:20:03 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/08 21:38:15 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	render_map(char **map, t_core *core)
 			grass_render(core, 10, col * 32, line * 32);
 		else if (map[line][col] == 'P')
 		{
-			printf("A");
 			core->duck.pos_x = col * 32;
 			core->duck.pos_y = line * 32;
 		}
@@ -38,7 +37,7 @@ void	render_map(char **map, t_core *core)
 			core->coin.total++;
 		}
 		col++;
-		if (col == 55)
+		if (col == core->win.width / 32)
 		{
 			col = 0;
 			line++;
