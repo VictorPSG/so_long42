@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 21:31:23 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/09 20:25:21 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/09 22:00:14 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 void	free_window(t_core *core)
 {
+	free_matrix(core->map);
+	free_image(core->coin.frame, core);
+	free_image(core->duck.frames, core);
+	free_image(core->grass.frames, core);
 	if (core->win.ptr)
 		mlx_destroy_window(core->win.mlx, core->win.ptr);
 	if (core->win.mlx)
@@ -25,9 +29,16 @@ void	free_window(t_core *core)
 
 void	free_image(void *frame[], t_core *core)
 {
-	while (frame)
+	int	i;
+
+	if (frame != NULL)
 	{
-		mlx_destroy_image(core->win.mlx, frame);
-		frame = NULL;
+		i = 0;
+		while (frame[i] != NULL)
+		{
+			mlx_destroy_image(core->win.mlx, frame[i]);
+			frame[i] = NULL;
+			i++;
+		}
 	}
 }

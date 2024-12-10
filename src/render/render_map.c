@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 20:33:30 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/09 19:13:24 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/09 21:28:42 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	wall_or_grass(char **map, t_core *core, int line, int col)
 	if (map[line][col] == 48)
 		grass_render(core, 5, col * 32, line * 32);
 	else if (map[line][col] == 49)
-		grass_render(core, 10, col * 32, line * 32);
+		grass_render(core, 9, col * 32, line * 32);
 }
 
 void	render_map(char **map, t_core *core)

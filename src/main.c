@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/09 20:24:51 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/09 21:59:18 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int	main(void)
 	core.map = map_matrix("src/map/map.ber", &core);
 	core.win.mlx = mlx_init();
 	if (!core.win.mlx)
+	{
 		return (1);
+	}
 	core.win.ptr = mlx_new_window(core.win.mlx,
 			core.win.width, core.win.height, "GAME");
 	if (!core.win.ptr)
@@ -31,11 +33,14 @@ int	main(void)
 		return (1);
 	}
 	if (!load_grass(&core) || !load_duck(&core) || !load_coin(&core))
-		return (0);
+	{
+		free_window(&core);
+		return (1);
+	}
 	mlx_loop_hook(core.win.mlx, game_loop, &core);
 	render_map(core.map, &core);
 	mlx_hook(core.win.ptr, KeyPress, KeyPressMask, &handle_keyboard, &core);
 	mlx_loop(core.win.mlx);
-	free_matrix(core.map);
 	free_window(&core);
+	return (0);
 }

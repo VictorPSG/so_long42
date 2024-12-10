@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/09 20:18:22 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/09 21:27:55 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ typedef struct s_window
 
 typedef struct s_grass
 {
-	void	*frames[12];
+	void	*frames[11];
 	int		width;
 	int		height;
 }			t_grass;
 
 typedef struct s_duck
 {
-	void	*frames[10];
+	void	*frames[12];
 	int		pos_x;
 	int		pos_y;
 	int		line;

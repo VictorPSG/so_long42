@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 00:35:49 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/05 00:46:23 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/09 21:19:50 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	load_img(char *path[], void *frame[], t_core *core)
 		}
 		i++;
 	}
+	frame[i] = NULL;
 	return (1);
 }
