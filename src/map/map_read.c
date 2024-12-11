@@ -6,11 +6,17 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 23:30:06 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 03:33:05 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 04:15:29 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/main.h"
+static void	player_pos(t_core *core, int line, int col)
+{
+	core->duck.pos_x = col * 32;
+	core->duck.pos_y = line * 32;
+	core->map.player++;
+}
 
 void	map_read(char **map, t_core *core)
 {
@@ -22,17 +28,13 @@ void	map_read(char **map, t_core *core)
 	while (map[line])
 	{
 		if (map[line][col] == 'P')
-		{
-			core->duck.pos_x = col * 32;
-			core->duck.pos_y = line * 32;
-			core->map.player++;
-		}
+			player_pos(core, line, col);
 		else if (map[line][col] == 'C')
 			core->coin.total++;
-		else if(map[line][col] == 'E')
-		{
+		else if (map[line][col] == 'E')
 			core->map.exit++;
-		}
+		else if (map[line][col] == '\0')
+			core->map.exit = 100;
 		else if(map[line][col] != '1' && map[line][col] != '0')
 			core->map.char_inv++;
 		col++;

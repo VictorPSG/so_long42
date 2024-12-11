@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 23:56:54 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 03:53:44 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 04:16:57 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	map_verify(t_core *core)
 		write(1, "Error!\nNumero de saidas invaldo!", 32);
 		return (1);
 	}
-	core->map.exit = 0;
+	core->map.exit -= 1;
 	if (flood_fill(core, core->duck.pos_y / 32, core->duck.pos_x
-			/ 32) != core->coin.total || core->map.exit != 1)
+			/ 32) != core->coin.total || core->map.exit == 1)
 	{
 		write(1, "Error!\nMapa invalido!", 21);
 		return (1);

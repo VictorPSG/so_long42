@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 03:23:46 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 04:00:24 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static void	init_structs(t_core *core)
 	core->map.coins = 0;
 	core->map.player = 0;
 	core->map.char_inv = 0;
-	core->map.matrix = map_matrix("src/map/map.ber", core);
-	core->map.map_verify = map_matrix("src/map/map.ber", core);
+	core->map.matrix = map_matrix("src/map/map2.ber", core);
+	core->map.map_verify = map_matrix("src/map/map2.ber", core);
 }
 int	main(void)
 {
