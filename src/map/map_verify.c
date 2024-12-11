@@ -6,13 +6,13 @@
 /*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 23:56:54 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 18:43:26 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:53:04 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../../include/main.h"
 
-int	row_verify(t_core *core)
+static int	row_verify(t_core *core)
 {
 	int	i;
 	int count;
@@ -31,6 +31,17 @@ int	row_verify(t_core *core)
 		return (1);
 	return (0);
 }
+static int is_map_valid(t_core *core)
+{
+	core->map.exit = 0;
+	if (flood_fill(core, core->duck.pos_y / 32, core->duck.pos_x
+			/ 32) != core->coin.total || core->map.exit != 1)
+		return (1);
+	if(row_verify(core))
+		return(1);
+	return (0);
+}
+
 int	map_verify(t_core *core)
 {
 	map_read(core->map.map_verify, core);
@@ -45,15 +56,9 @@ int	map_verify(t_core *core)
 		return (1);
 	}
 	core->map.exit = 0;
-	if (flood_fill(core, core->duck.pos_y / 32, core->duck.pos_x
-			/ 32) != core->coin.total || core->map.exit != 1)
+	if (is_map_valid(core))
 	{
 		write(1, "Error!\nMapa invalido!\n", 22);
-		return (1);
-	}
-	if(row_verify(core))
-	{
-		printf("row verify\n");
 		return (1);
 	}
 	if (core->map.char_inv != 0)
