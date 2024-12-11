@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 23:30:06 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 04:15:29 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 04:52:23 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ void	map_read(char **map, t_core *core)
 			core->coin.total++;
 		else if (map[line][col] == 'E')
 			core->map.exit++;
-		else if (map[line][col] == '\0')
-			core->map.exit = 100;
 		else if(map[line][col] != '1' && map[line][col] != '0')
 			core->map.char_inv++;
 		col++;
