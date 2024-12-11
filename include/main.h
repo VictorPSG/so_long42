@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/09 21:27:55 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 00:53:15 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,17 @@ typedef struct s_coin
 	int		total;
 	int		collected;
 }			t_coin;
+typedef struct s_map
+{
+	char	**matrix;
+	char	**map_verify;
+	int		cols;
+	int		rows;
+	int		coins;
+	int		exit;
+	int		player;
+	int		char_inv;
+}			t_map;
 
 typedef struct s_core
 {
@@ -62,7 +73,7 @@ typedef struct s_core
 	t_grass		grass;
 	t_duck		duck;
 	t_coin		coin;
-	char		**map;
+	t_map		map;
 }			t_core;
 int		game_loop(t_core *core);
 void	free_window(t_core *core);
@@ -81,4 +92,7 @@ char	*get_next_line(int fd);
 int		open_file(char *filename);
 void	free_matrix(char **matrix);
 void	free_image(void *frame[], t_core *core);
+int		flood_fill(t_core *core, int x, int y);
+void	map_read(char **map, t_core *core);
+int		map_verify(t_core *core);
 #endif

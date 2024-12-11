@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 21:31:23 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/09 22:00:14 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 01:46:10 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	free_window(t_core *core)
 {
-	free_matrix(core->map);
+	free_matrix(core->map.matrix);
 	free_image(core->coin.frame, core);
 	free_image(core->duck.frames, core);
 	free_image(core->grass.frames, core);

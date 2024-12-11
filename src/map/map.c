@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:49:17 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/09 20:01:20 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 01:49:17 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,7 @@ char	**map_matrix(char *file, t_core *core)
 	matrix[i] = NULL;
 	core->win.height = i * 32;
 	core->win.width = len * 32;
+	core->map.cols = len;
+	core->map.rows = i;
 	return (matrix);
 }

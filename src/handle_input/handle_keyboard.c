@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 23:06:17 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/09 21:00:01 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 00:40:08 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	move_if_valid(t_core *core, int dx, int dy)
 	int		duck_y;
 	char	**map;
 
-	map = core->map;
+	map = core->map.matrix;
 	duck_x = (core->duck.pos_x) / 32;
 	duck_y = (core->duck.pos_y) / 32;
 	if (map[duck_y + dy][duck_x + dx] != '1' &&
@@ -44,7 +44,7 @@ static void	move_if_valid(t_core *core, int dx, int dy)
 	{
 		if (map[duck_y + dy][duck_x + dx] == 'C')
 		{
-			core->map[duck_y + dy][duck_x + dx] = '0';
+			core->map.matrix[duck_y + dy][duck_x + dx] = '0';
 			core->coin.collected++;
 		}
 		grass_render(core, 5, core->duck.pos_x, core->duck.pos_y);
