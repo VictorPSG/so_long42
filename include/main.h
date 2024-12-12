@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/12 01:50:28 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/12 02:07:00 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ int		load_img(char *path[], void *frame[], t_core *core);
 int		load_grass(t_core *core);
 void	render_map(char **map, t_core *core);
 void	grass_render(t_core *core, int i, int x, int y);
-void	corner_render(t_core *core);
 char	**map_matrix(char *file, t_core *core);
 int		handle_keyboard(int keysym, t_core *core);
 void	duck_render(t_core *core, int i, int x, int y);
