@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 20:33:30 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 20:42:06 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/12 00:07:26 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	render_map(char **map, t_core *core)
 		}
 		else if (map[row][col] == 'C')
 			coin_render(core, 0, col * 32, row * 32);
+		else if (map[row][col] == 'E')
+			exit_render(core, 0, col * 32, row * 32);
 		col++;
 		if (col == core->win.width / 32)
 		{

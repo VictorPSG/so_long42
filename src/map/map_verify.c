@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 23:56:54 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 20:40:33 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/12 00:32:32 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ static int	is_map_valid(t_core *core)
 	core->map.exit = 0;
 	if (flood_fill(core, core->duck.pos_y / 32, core->duck.pos_x
 			/ 32) != core->coin.total || core->map.exit != 1)
+		return (1);
+	if (core->coin.total == 0)
 		return (1);
 	if (row_verify(core))
 		return (1);

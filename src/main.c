@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 23:06:30 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/12 00:43:22 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,11 @@ static int	init_funcs(t_core *core)
 		mlx_destroy_display(core->win.mlx);
 		return (1);
 	}
-	if (!load_grass(core) || !load_duck(core) || !load_coin(core))
+	if (!load_grass(core) || !load_duck(core) || !load_coin(core) ||
+		!load_exit(core))
 	{
 		free_window(core);
+		free_matrix(core->map.matrix);
 		return (1);
 	}
 	return (0);

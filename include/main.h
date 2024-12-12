@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 22:41:46 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/12 00:09:18 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ typedef struct s_coin
 	int		total;
 	int		collected;
 }			t_coin;
+typedef struct s_exit
+{
+	void	*frame[2];
+}			t_exit;
+
 typedef struct s_map
 {
 	char	**matrix;
@@ -75,6 +80,7 @@ typedef struct s_core
 	t_duck		duck;
 	t_coin		coin;
 	t_map		map;
+	t_exit		exit;
 }			t_core;
 int		game_loop(t_core *core);
 void	free_window(t_core *core);
@@ -97,4 +103,6 @@ int		flood_fill(t_core *core, int x, int y);
 void	map_read(char **map, t_core *core);
 int		map_verify(t_core *core);
 int		close_window(t_core *core);
+void	exit_render(t_core *core, int i, int x, int y);
+int		load_exit(t_core *core);
 #endif
