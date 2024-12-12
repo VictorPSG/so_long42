@@ -6,13 +6,34 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/12 00:43:22 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/12 01:42:29 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/main.h"
 #include <stdio.h>
 
+static int file_ber(char *file[])
+{
+	int		i;
+	int		len;
+	int		len2;
+	char	*ber = ".ber";
+
+	i = 0;
+	len2 = 3;
+	len = ft_strlen(file[1]) - 1;
+	while (i < 4)
+	{
+		if(file[1][len--] != ber[len2--])
+		{
+			ft_putstr_fd("Error!\nFormato de arquivo invalido!\n", 1);
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
 static void	init_structs(t_core *core, char *argv[])
 {
 	core->coin.total = 0;
@@ -63,7 +84,7 @@ int	main(int argc, char *argv[])
 		ft_putstr_fd("Error!\nNúmeros de argumentos inválido!", 1);
 		return (0);
 	}
-	if (open_file(argv[1]) == -1)
+	if (open_file(argv[1]) == -1 || file_ber(argv))
 		return (0);
 	init_structs(&core, argv);
 	if (init_funcs(&core))
