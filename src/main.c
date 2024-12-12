@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 21:59:08 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 22:38:46 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ static int	init_funcs(t_core *core)
 	{
 		free_matrix(core->map.matrix);
 		free_matrix(core->map.map_verify);
-		return (0);
+		mlx_destroy_display(core->win.mlx);
+		free(core->win.mlx);
+		return (1);
 	}
 	core->win.ptr = mlx_new_window(core->win.mlx, core->win.width, core->win.height,
 		"So_long.42");
