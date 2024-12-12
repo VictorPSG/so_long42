@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 21:46:01 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:52:35 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(void)
 {
 	t_core	core;
 
-	if(open_file("src/map/map2.ber") == 1)
+	if(open_file("src/map/map2.ber") == -1)
 		return (0);
 	init_structs(&core);
 	if(init_funcs(&core))

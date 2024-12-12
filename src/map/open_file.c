@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 00:05:39 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 21:38:56 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:52:48 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	open_file(char *filename)
 	if (fd < 1)
 	{
 		write(1, "Erro ao abrir o arquivo!\n", 25);
-		return (1);
+		return (-1);
 	}
 	return (fd);
 }
