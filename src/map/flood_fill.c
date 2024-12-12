@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 21:20:03 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 04:51:04 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 20:40:57 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	flood_fill(t_core *core, int x, int y)
 		return (0);
 	if (map[x][y] == 'C')
 		core->map.coins++;
-	if(map[x][y] == 'E')
+	if (map[x][y] == 'E')
 		core->map.exit++;
 	map[x][y] = 'X';
 	flood_fill(core, x + 1, y);

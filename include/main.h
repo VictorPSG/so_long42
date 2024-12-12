@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 00:53:15 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 20:13:17 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,5 @@ void	free_image(void *frame[], t_core *core);
 int		flood_fill(t_core *core, int x, int y);
 void	map_read(char **map, t_core *core);
 int		map_verify(t_core *core);
+int		close_window(t_core *core);
 #endif

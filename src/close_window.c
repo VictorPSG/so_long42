@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   open_file.c                                        :+:      :+:    :+:   */
+/*   close_window.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 00:05:39 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 21:38:56 by victda-s         ###   ########.fr       */
+/*   Created: 2024/12/11 20:10:42 by victda-s          #+#    #+#             */
+/*   Updated: 2024/12/11 20:34:30 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/main.h"
+#include "../include/main.h"
 
-int	open_file(char *filename)
+int	close_window(t_core *core)
 {
-	int	fd;
-
-	fd = open(filename, O_RDONLY);
-	if (fd < 1)
-	{
-		write(1, "Erro ao abrir o arquivo!\n", 25);
-		return (1);
-	}
-	return (fd);
+	free_window(core);
+	exit(0);
+	return (0);
 }

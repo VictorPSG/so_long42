@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:49:17 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 16:21:35 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:39:44 by victda-s         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "../../include/main.h"
 
@@ -27,7 +27,7 @@ void	free_matrix(char **matrix)
 	matrix = NULL;
 }
 
-static void set_win_size(t_core *core, int len, int i)
+static void	set_win_size(t_core *core, int len, int i)
 {
 	core->win.height = i * 32;
 	core->win.width = len * 32;
@@ -45,9 +45,11 @@ char	**map_matrix(char *file, t_core *core)
 	i = 0;
 	len = 0;
 	fd = open_file(file);
+	if(fd < 1)
+		exit(1); 
 	matrix = (char **)malloc(65 * sizeof(char *));
 	if (!matrix)
-		return (0);
+		return (NULL);
 	while (i < 65)
 	{
 		matrix[i] = get_next_line(fd);
