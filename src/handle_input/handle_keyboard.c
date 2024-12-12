@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 23:06:17 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 22:41:59 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/12 01:51:28 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,15 @@ int	handle_keyboard(int keysym, t_core *core)
 {
 	key_escape(keysym, core);
 	if (keysym == XK_a)
+	{
+		core->duck.num_frame = 1;
 		move_if_valid(core, -1, 0);
+	}
 	if (keysym == XK_d)
+	{
+		core->duck.num_frame = 0;
 		move_if_valid(core, 1, 0);
+	}
 	if (keysym == XK_w)
 		move_if_valid(core, 0, -1);
 	if (keysym == XK_s)
