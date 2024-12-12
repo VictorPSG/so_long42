@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 20:01:28 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 20:13:17 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:58:54 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_duck
 	int		pos_y;
 	int		line;
 	int		col;
+	int		countMov;
 }			t_duck;
 
 typedef struct s_coin
