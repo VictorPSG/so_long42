@@ -6,26 +6,27 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/12 01:42:29 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/12 20:30:41 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/main.h"
 #include <stdio.h>
 
-static int file_ber(char *file[])
+static int	file_ber(char *file[])
 {
 	int		i;
 	int		len;
 	int		len2;
-	char	*ber = ".ber";
+	char	*ber;
 
+	ber = ".ber";
 	i = 0;
 	len2 = 3;
 	len = ft_strlen(file[1]) - 1;
 	while (i < 4)
 	{
-		if(file[1][len--] != ber[len2--])
+		if (file[1][len--] != ber[len2--])
 		{
 			ft_putstr_fd("Error!\nFormato de arquivo invalido!\n", 1);
 			return (1);
@@ -34,6 +35,7 @@ static int file_ber(char *file[])
 	}
 	return (0);
 }
+
 static void	init_structs(t_core *core, char *argv[])
 {
 	core->coin.total = 0;
@@ -65,8 +67,8 @@ static int	init_funcs(t_core *core)
 		mlx_destroy_display(core->win.mlx);
 		return (1);
 	}
-	if (!load_grass(core) || !load_duck(core) || !load_coin(core) ||
-		!load_exit(core))
+	if (!load_grass(core) || !load_duck(core) || !load_coin(core)
+		|| !load_exit(core))
 	{
 		free_window(core);
 		free_matrix(core->map.matrix);
