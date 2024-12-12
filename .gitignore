@@ -8,3 +8,6 @@ obj/
 # Arquivos de teste
 tests/
 test.h
+
+# Arquivos objeto
+*.o
