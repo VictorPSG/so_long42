@@ -11,3 +11,4 @@ test.h
 
 # Arquivos objeto
 *.o
+*.a
