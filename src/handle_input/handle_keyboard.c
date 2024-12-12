@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 23:06:17 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 22:01:49 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 22:41:59 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ static void	move_if_valid(t_core *core, int dx, int dy)
 			core->coin.collected++;
 		}
 		grass_render(core, 5, core->duck.pos_x, core->duck.pos_y);
-		core->duck.countMov++;
+		core->duck.count_mov++;
 		ft_putstr_fd("Movimentos: ", 1);
-		ft_putnbr_fd(core->duck.countMov, 1);
+		ft_putnbr_fd(core->duck.count_mov, 1);
 		ft_putchar_fd('\n', 1);
 		core->duck.pos_x += dx * 32;
 		core->duck.pos_y += dy * 32;

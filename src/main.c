@@ -6,14 +6,14 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/11 22:38:46 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/11 23:06:30 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/main.h"
 #include <stdio.h>
 
-static void	init_structs(t_core *core)
+static void	init_structs(t_core *core, char *argv[])
 {
 	core->coin.total = 0;
 	core->coin.collected = 0;
@@ -21,14 +21,15 @@ static void	init_structs(t_core *core)
 	core->map.coins = 0;
 	core->map.player = 0;
 	core->map.char_inv = 0;
-	core->duck.countMov = 0;
+	core->duck.count_mov = 0;
 	core->win.mlx = mlx_init();
-	core->map.matrix = map_matrix("src/map/map2.ber", core);
-	core->map.map_verify = map_matrix("src/map/map2.ber", core);
+	core->map.matrix = map_matrix(argv[1], core);
+	core->map.map_verify = map_matrix(argv[1], core);
 }
+
 static int	init_funcs(t_core *core)
 {
-	if(map_verify(core))
+	if (map_verify(core))
 	{
 		free_matrix(core->map.matrix);
 		free_matrix(core->map.map_verify);
@@ -36,8 +37,8 @@ static int	init_funcs(t_core *core)
 		free(core->win.mlx);
 		return (1);
 	}
-	core->win.ptr = mlx_new_window(core->win.mlx, core->win.width, core->win.height,
-		"So_long.42");
+	core->win.ptr = mlx_new_window(core->win.mlx, core->win.width,
+			core->win.height, "So_long.42");
 	if (!core->win.ptr)
 	{
 		mlx_destroy_display(core->win.mlx);
@@ -51,14 +52,19 @@ static int	init_funcs(t_core *core)
 	return (0);
 }
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
 	t_core	core;
 
-	if(open_file("src/map/map2.ber") == -1)
+	if (argc != 2)
+	{
+		ft_putstr_fd("Error!\nNúmeros de argumentos inválido!", 1);
 		return (0);
-	init_structs(&core);
-	if(init_funcs(&core))
+	}
+	if (open_file(argv[1]) == -1)
+		return (0);
+	init_structs(&core, argv);
+	if (init_funcs(&core))
 		return (0);
 	if (!core.win.mlx)
 	{
