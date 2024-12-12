@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 21:20:03 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/12 00:34:26 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/12 19:51:18 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	flood_fill(t_core *core, int x, int y)
 	if (x < 0 || x >= rows || y < 0 || y >= cols)
 		return (0);
 	if (map[x][y] == 'E')
+	{
 		core->map.exit++;
+		map[x][y] = 'X';
+	}
 	if (map[x][y] == '1' || map[x][y] == 'X' || map[x][y] == 'E')
 		return (0);
 	if (map[x][y] == 'C')

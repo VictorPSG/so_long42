@@ -47,11 +47,4 @@ fclean: clean
 
 re: fclean all
 
-valgrind:
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
-
-test: $(SRC)
-	@echo "Compilando para teste sem warnings..."
-	$(CC) $^ $(LDFLAGS) -o $(NAME)
-
-.PHONY: all clean fclean re valgrind
+.PHONY: all clean fclean re

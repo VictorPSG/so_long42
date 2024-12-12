@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 23:56:54 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/12 00:32:32 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/12 19:56:18 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,6 @@ static int	is_map_valid(t_core *core)
 int	map_verify(t_core *core)
 {
 	map_read(core->map.map_verify, core);
-	if (is_map_valid(core))
-	{
-		write(1, "Error!\nMapa invalido!\n", 22);
-		return (1);
-	}
 	if (core->map.player != 1)
 	{
 		write(1, "Error!\nNumero de players invaldo!\n", 34);
@@ -95,6 +90,11 @@ int	map_verify(t_core *core)
 	if (core->map.char_inv != 0)
 	{
 		write(1, "Error!\nCharactere invalido!\n", 28);
+		return (1);
+	}
+	if (is_map_valid(core))
+	{
+		write(1, "Error!\nMapa invalido!\n", 22);
 		return (1);
 	}
 	free_matrix(core->map.map_verify);
