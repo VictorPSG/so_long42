@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:55:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/12/12 20:30:41 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:18:01 by victda-s         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "../include/main.h"
 #include <stdio.h>
@@ -45,6 +45,7 @@ static void	init_structs(t_core *core, char *argv[])
 	core->map.player = 0;
 	core->map.char_inv = 0;
 	core->duck.count_mov = 0;
+	core->duck.num_frame = 0;
 	core->win.mlx = mlx_init();
 	core->map.matrix = map_matrix(argv[1], core);
 	core->map.map_verify = map_matrix(argv[1], core);
